@@ -52,9 +52,7 @@ To develop and internally validate machine-learning models for CKD classificatio
 │   ├── *.csv    # Aggregate metrics, coefficients, and summaries
 │   └── *.png    # Model diagnostics and visualizations
 ├── 05_Presentation/
-│   ├── CKD_Prediction_Model_Comparison.pptx
-│   ├── CKD_Prediction_Model_Comparison.pdf
-│   └── CKD_Presentation_Cover.png
+│   └── CKD_Prediction_Model_Comparison.pdf
 ├── .gitignore
 ├── README.md
 └── requirements.txt
@@ -64,10 +62,7 @@ The `03_Data/` directory is excluded from version control to prevent redistribut
 
 ## Project Presentation
 
-![CKD prediction model comparison presentation cover](05_Presentation/CKD_Presentation_Cover.png)
-
 - [View the presentation as PDF](05_Presentation/CKD_Prediction_Model_Comparison.pdf)
-- [Download the PowerPoint presentation](05_Presentation/CKD_Prediction_Model_Comparison.pptx)
 - [Read the complete analytical report](01_Laporan/CKD_Machine_Learning_Report_Mohammad_Maliki_Rafli.pdf)
 
 ## Analytical Workflow
