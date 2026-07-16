@@ -1,0 +1,4 @@
+Model,Best_params,Mean_CV_AUC_at_best,Mean_train_AUC_at_best
+LASSO Logistic Regression,{'model__C': 1.0},0.9987129987129988,1.0
+Decision Tree,"{'model__ccp_alpha': 0.0, 'model__criterion': 'gini', 'model__max_depth': 2, 'model__min_samples_leaf': 5}",0.9824625741433891,0.9882239954239954
+Neural Network,"{'model__activation': 'relu', 'model__alpha': 0.001, 'model__hidden_layer_sizes': (16, 8)}",0.9910016128182512,0.9903152752752753

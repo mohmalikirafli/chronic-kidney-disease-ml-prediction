@@ -19,3 +19,6 @@ Thumbs.db
 # Local generated files
 *.log
 
+# Individual-level health data (not for public distribution)
+03_Data/
+04_Output/validation_predictions.csv

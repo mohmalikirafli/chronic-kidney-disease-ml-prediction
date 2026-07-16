@@ -4,10 +4,9 @@ An academic machine-learning project for predicting chronic kidney disease (CKD)
 
 ## Project overview
 
-This repository contains the complete submission for the Data Mining and Machine Learning final examination, including the analytical report, reproducible Jupyter notebook, dataset, validation tables, and visualization outputs.
+This repository contains the analytical report, reproducible Jupyter notebook, aggregate validation tables, and visualization outputs for the Data Mining and Machine Learning final examination. The individual-level health dataset and row-level predictions are intentionally not distributed in this public repository.
 
 **Author:** Mohammad Maliki Rafli  
-**Student ID:** 291251025  
 **Program:** Master of Public Health, Universitas Airlangga
 
 ## Methods
@@ -37,7 +36,7 @@ These results describe internal validation on this dataset and should not be int
 .
 |-- 01_Laporan/   # Final analytical report (PDF)
 |-- 02_Script/    # Reproducible Jupyter notebook
-|-- 03_Data/      # Analysis dataset
+|-- 03_Data/      # Local dataset directory (not tracked)
 |-- 04_Output/    # Metrics, predictions, tables, and figures
 |-- README.md
 |-- requirements.txt
@@ -54,11 +53,13 @@ These results describe internal validation on this dataset and should not be int
    pip install -r requirements.txt
    ```
 
-4. Open the notebook in `02_Script/` and run all cells from top to bottom.
+4. Create the directory `03_Data/` and place the required dataset at `03_Data/data_uas_kidney_disease.csv`.
+5. Open the notebook in `02_Script/` and run all cells from top to bottom.
 
 ## Notes
 
 - The repository is intended for academic and educational use.
+- The individual-level health dataset is excluded to protect data privacy and prevent unauthorized redistribution.
+- Row-level validation predictions are also excluded; only aggregate performance results are published.
 - Model estimates may be optimistic because they are based on internal validation.
 - The included report provides the complete methodological explanation and interpretation.
-
