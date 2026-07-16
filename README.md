@@ -4,6 +4,7 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-Machine%20Learning-F7931E?logo=scikitlearn&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
 ![Domain](https://img.shields.io/badge/Domain-Health%20Data%20Science-2E8B57)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An end-to-end health data science project comparing **LASSO logistic regression**, **decision tree**, and **neural network** models for chronic kidney disease (CKD) prediction. The workflow covers preprocessing, model tuning, internal validation, calibration, discrimination, and model interpretation.
 
@@ -25,6 +26,8 @@ An end-to-end health data science project comparing **LASSO logistic regression*
 - [Limitations](#limitations)
 - [Conclusion](#conclusion)
 - [Recommendations](#recommendations)
+- [License and Academic Use](#license-and-academic-use)
+- [Contact](#contact)
 
 ## Project Overview
 
@@ -54,6 +57,7 @@ To develop and internally validate machine-learning models for CKD classificatio
 ├── 05_Presentation/
 │   └── CKD_Prediction_Model_Comparison.pdf
 ├── .gitignore
+├── LICENSE
 ├── README.md
 └── requirements.txt
 ```
@@ -172,6 +176,18 @@ All three approaches demonstrated strong CKD classification performance. LASSO l
 - Assess clinical utility using decision-curve analysis.
 - Compare model performance after stronger regularization and repeated resampling.
 - Report uncertainty and calibration alongside discrimination before considering practical use.
+
+## License and Academic Use
+
+The source code in this repository is available under the [MIT License](LICENSE). You may use, modify, and distribute the code provided that the original copyright and license notice are retained.
+
+The report, presentation, figures, and other academic materials remain the intellectual work of the author. When adapting or referencing these materials, please provide appropriate attribution. The contents are intended for education, research, and portfolio demonstration—not for clinical diagnosis or medical decision-making.
+
+The dataset is **not included** in the license or distributed through this repository because of data-access and privacy considerations.
+
+## Contact
+
+For questions, academic discussion, collaboration, or legitimate inquiries about data access, please contact **Mohammad Maliki Rafli** through the [GitHub profile](https://github.com/mohmalikirafli) or open an [issue](https://github.com/mohmalikirafli/chronic-kidney-disease-ml-prediction/issues) in this repository.
 
 ---
 
