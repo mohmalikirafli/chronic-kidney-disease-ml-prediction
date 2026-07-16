@@ -1,26 +1,92 @@
 # Chronic Kidney Disease Prediction Using Machine Learning
 
-An academic machine-learning project for predicting chronic kidney disease (CKD) using three supervised classification approaches: LASSO logistic regression, decision tree, and neural network.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-Machine%20Learning-F7931E?logo=scikitlearn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
+![Domain](https://img.shields.io/badge/Domain-Health%20Data%20Science-2E8B57)
 
-## Project overview
-
-This repository contains the analytical report, reproducible Jupyter notebook, aggregate validation tables, and visualization outputs for the Data Mining and Machine Learning final examination. The individual-level health dataset and row-level predictions are intentionally not distributed in this public repository.
+An end-to-end health data science project comparing **LASSO logistic regression**, **decision tree**, and **neural network** models for chronic kidney disease (CKD) prediction. The workflow covers preprocessing, model tuning, internal validation, calibration, discrimination, and model interpretation.
 
 **Author:** Mohammad Maliki Rafli  
 **Program:** Master of Public Health, Universitas Airlangga
 
-## Methods
+## Table of Contents
 
-- Missing-data handling through model pipelines
-- Stratified training and internal-validation split
-- Hyperparameter tuning with stratified cross-validation
-- LASSO logistic regression
-- Decision tree classification
+- [Project Overview](#project-overview)
+- [Research Objective](#research-objective)
+- [Repository Structure](#repository-structure)
+- [Analytical Workflow](#analytical-workflow)
+- [Models and Evaluation](#models-and-evaluation)
+- [Key Results](#key-results)
+- [Selected Visualizations](#selected-visualizations)
+- [Data Privacy](#data-privacy)
+- [Reproducing the Analysis](#reproducing-the-analysis)
+- [Limitations](#limitations)
+- [Conclusion](#conclusion)
+- [Recommendations](#recommendations)
+
+## Project Overview
+
+Chronic kidney disease is a major public health concern that benefits from timely risk identification. This project evaluates three supervised classification approaches with different strengths:
+
+- **LASSO logistic regression** for parsimony and interpretability.
+- **Decision tree** for transparent nonlinear decision rules.
+- **Neural network** for flexible modeling of complex relationships.
+
+The repository contains the analytical report, a sanitized and reproducible notebook, aggregate validation results, and publication-ready figures. Individual-level health data are intentionally excluded.
+
+## Research Objective
+
+To develop and internally validate machine-learning models for CKD classification, compare their predictive performance, and assess the trade-off between discrimination, calibration, and interpretability.
+
+## Repository Structure
+
+```text
+.
+├── 01_Laporan/
+│   └── CKD_Machine_Learning_Report_Mohammad_Maliki_Rafli.pdf
+├── 02_Script/
+│   └── CKD_Machine_Learning_Analysis.ipynb
+├── 04_Output/
+│   ├── *.csv    # Aggregate metrics, coefficients, and summaries
+│   └── *.png    # Model diagnostics and visualizations
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
+The `03_Data/` directory is excluded from version control to prevent redistribution of individual-level health data.
+
+## Analytical Workflow
+
+1. Inspect variables and missingness.
+2. Create a stratified development and internal-validation split.
+3. Build preprocessing and modeling pipelines to reduce data leakage.
+4. Tune hyperparameters using stratified cross-validation.
+5. Fit LASSO logistic regression, decision tree, and neural network models.
+6. Evaluate discrimination, calibration, and classification performance.
+7. Examine coefficients and feature importance for interpretation.
+8. Estimate uncertainty using bootstrap confidence intervals.
+
+## Models and Evaluation
+
+### Models
+
+- LASSO-penalized logistic regression
+- Decision tree classifier
 - Multilayer perceptron neural network
-- Discrimination, calibration, and classification-performance assessment
-- Bootstrap confidence intervals and feature-importance analysis
 
-## Main validation results
+### Evaluation metrics
+
+- Accuracy and balanced accuracy
+- Sensitivity and specificity
+- Precision and F1 score
+- Area under the ROC curve (AUC)
+- Brier score
+- Calibration intercept and slope
+- Bootstrap confidence intervals
+
+## Key Results
 
 | Model | Accuracy | Sensitivity | Specificity | F1 score | AUC | Brier score |
 |---|---:|---:|---:|---:|---:|---:|
@@ -28,38 +94,77 @@ This repository contains the analytical report, reproducible Jupyter notebook, a
 | Decision tree | 0.99 | 1.00 | 0.974 | 0.992 | 0.998 | 0.0124 |
 | Neural network | 0.98 | 0.968 | 1.00 | 0.984 | 1.000 | 0.0665 |
 
-These results describe internal validation on this dataset and should not be interpreted as evidence of external clinical validity. Independent external validation is required before any clinical application.
+LASSO logistic regression produced the strongest overall internal-validation profile, combining excellent discrimination with the lowest Brier score. The near-perfect results should be interpreted cautiously because they come from internal validation and may reflect the characteristics of this dataset.
 
-## Repository structure
+## Selected Visualizations
 
-```text
-.
-|-- 01_Laporan/   # Final analytical report (PDF)
-|-- 02_Script/    # Reproducible Jupyter notebook
-|-- 03_Data/      # Local dataset directory (not tracked)
-|-- 04_Output/    # Metrics, predictions, tables, and figures
-|-- README.md
-|-- requirements.txt
-`-- .gitignore
-```
+### ROC curves
 
-## Reproducing the analysis
+![ROC curves for internal validation](04_Output/roc_curve_internal_validation.png)
 
-1. Clone the repository.
-2. Create and activate a Python virtual environment.
-3. Install the dependencies:
+### Calibration
+
+![Calibration plot for internal validation](04_Output/calibration_plot_internal_validation.png)
+
+### Decision-tree feature importance
+
+![Decision-tree feature importance](04_Output/decision_tree_feature_importance.png)
+
+## Data Privacy
+
+This public repository does **not** distribute:
+
+- the individual-level CKD dataset;
+- row-level predicted probabilities;
+- row-level validation labels; or
+- notebook outputs containing clinical records.
+
+Only code, aggregate results, and non-identifiable visualizations are published. The notebook outputs were cleared before publication.
+
+## Reproducing the Analysis
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/mohmalikirafli/chronic-kidney-disease-ml-prediction.git
+   cd chronic-kidney-disease-ml-prediction
+   ```
+
+2. Create and activate a virtual environment.
+
+3. Install the required packages:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Create the directory `03_Data/` and place the required dataset at `03_Data/data_uas_kidney_disease.csv`.
-5. Open the notebook in `02_Script/` and run all cells from top to bottom.
+4. Create `03_Data/` and place the authorized dataset at:
 
-## Notes
+   ```text
+   03_Data/data_uas_kidney_disease.csv
+   ```
 
-- The repository is intended for academic and educational use.
-- The individual-level health dataset is excluded to protect data privacy and prevent unauthorized redistribution.
-- Row-level validation predictions are also excluded; only aggregate performance results are published.
-- Model estimates may be optimistic because they are based on internal validation.
-- The included report provides the complete methodological explanation and interpretation.
+5. Open `02_Script/CKD_Machine_Learning_Analysis.ipynb` and run the cells sequentially.
+
+## Limitations
+
+- Performance was assessed through internal validation only.
+- Very high predictive performance may indicate optimism or dataset-specific separation.
+- External validity across populations, healthcare settings, and measurement systems remains unknown.
+- The models are intended for academic analysis and are not clinical decision-support tools.
+
+## Conclusion
+
+All three approaches demonstrated strong CKD classification performance. LASSO logistic regression offered the best balance of predictive accuracy, calibration, and interpretability in the internal-validation sample. Decision tree and neural network models provided useful complementary perspectives on nonlinear structure and variable importance.
+
+## Recommendations
+
+- Conduct external validation using an independent population.
+- Evaluate temporal and geographic transportability.
+- Assess clinical utility using decision-curve analysis.
+- Compare model performance after stronger regularization and repeated resampling.
+- Report uncertainty and calibration alongside discrimination before considering practical use.
+
+---
+
+This repository is intended for academic and portfolio purposes in biostatistics and health data science.
